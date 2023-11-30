@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from "./pages/Header";
 import './App.css';
 
 function App() {
-  return (
-    <h1>Teste</h1>
-  );
+    return (
+        <Header/>
+
+    );
 }
 
 export default App;
