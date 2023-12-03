@@ -63,7 +63,7 @@
   cursor: pointer;
   width: 40px;
   height: 40px;
-  background-image: url('img/star.png');
+  background-image: url('../img/star.png');
   /*background-image: url('/src/img/star.png'); !* Substitua 'star.png' pela sua imagem de estrela *!*/
   background-size: cover;
 }
@@ -72,13 +72,13 @@
   content: '';
   width: 40px;
   height: 40px;
-  background-image: url('img/star-outline.png'); /* Substitua 'star-outline.png' pela sua imagem de estrela vazia */
+  background-image: url('../img/star-outline.png'); /* Substitua 'star-outline.png' pela sua imagem de estrela vazia */
   background-size: cover;
   position: absolute;
 }
 
 .rating input:checked ~ label {
-  background-image: url('img/star-filled.png'); /* Substitua 'star-filled.png' pela sua imagem de estrela preenchida */
+  background-image: url('../img/star-filled.png'); /* Substitua 'star-filled.png' pela sua imagem de estrela preenchida */
 }
 .dividir{
   color: #666;
