@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import ImgProduto from "./img/battefiled.png";
+import ImgProduto2 from "./img/gta3.jpg";
+import ImgProduto3 from "./img/logo_fc.jpg";
 import './App.css';
 import Header from "./pages/Header";
 import Avaliacao from "./components/Avaliacao";
 import './css/style.css';
 import './css/style2.css';
+import Carrossel from "./pages/Carrossel";
+
+import StarPreenchida from "./img/star.png";
+import StarFilled from "./img/star-filled.png";
+import StarOutline from "./img/star-outline.png";
 
 
 interface Jogo {
     nome: string;
     categoria: string;
     estrelas: number;
-
-    // Adicione outras propriedades conforme necessário
+    desconto: number;
+    valor: number;
+    img: string; // Change the type to string
+    // Add other properties as needed
 }
 
 const App: React.FC = () => {
@@ -23,27 +32,31 @@ const App: React.FC = () => {
     };
 
     const jogos: Jogo[] = [
-        // Adicione detalhes dos jogos aqui
-        { nome: 'Battlefield 4™', categoria: 'jogando', estrelas: 3 },
-        // Adicione mais jogos conforme necessário
+        {nome: 'Battlefield 4™', categoria: 'jogando', estrelas: 3, desconto: 129.90, valor: 89.90, img: ImgProduto},
+        {nome: 'GTA V', categoria: 'jogado', estrelas: 4, desconto: 199.90, valor: 159.90, img: ImgProduto2},
+        {nome: 'EA Sports FC', categoria: 'nao_recomendo', estrelas: 2, desconto: 359.90, valor: 259.90, img: ImgProduto3},
+        {nome: 'Battlefield 4™', categoria: 'jogando', estrelas: 3, desconto: 129.90, valor: 89.90, img: ImgProduto},
+        {nome: 'GTA V', categoria: 'jogado', estrelas: 4, desconto: 199.90, valor: 159.90, img: ImgProduto2},
+        {nome: 'EA Sports FC', categoria: 'nao_recomendo', estrelas: 2, desconto: 359.90, valor: 259.90, img: ImgProduto3},
     ];
 
-    const jogosFiltrados = categoriaAtiva === 'todos'
-        ? jogos
-        : jogos.filter(jogo => jogo.categoria === categoriaAtiva);
+    // Verifica se a categoria ativa é 'todos' e exibe todos os jogos nesse caso
+    const jogosFiltrados = categoriaAtiva === 'todos' ? jogos : jogos.filter(jogo => jogo.categoria === categoriaAtiva);
 
     return (
         <div>
             <Header/>
+            <Carrossel/>
+            <br/>
             <div className="add-jogo">
                 <a href="pages/cadatro_jogo.html">
                     <button className="btn orange text-center">Clique aqui e adicione seu Jogo</button>
                 </a>
-                <br />
+                <br/>
             </div>
-            <br />
+            <br/>
             <main>
-                <br />
+                <br/>
                 <div className="container main">
                     <div className="categorias">
                         <p>Categorias </p>
@@ -51,15 +64,15 @@ const App: React.FC = () => {
                             <button className="btn info" data-categoria="jogando" onClick={() => filtrarPorCategoria('jogando')}>
                                 Jogando
                             </button>
-                            <br />
+                            <br/>
                             <button className="btn success" data-categoria="jogado" onClick={() => filtrarPorCategoria('jogado')}>
                                 Jogado
                             </button>
-                            <br />
+                            <br/>
                             <button className="btn warning" data-categoria="zerados" onClick={() => filtrarPorCategoria('zerados')}>
                                 Zerados
                             </button>
-                            <br />
+                            <br/>
                             <button
                                 className="btn danger"
                                 data-categoria="nao_recomendo"
@@ -67,26 +80,38 @@ const App: React.FC = () => {
                             >
                                 Não Recomendados
                             </button>
+                            <br/>
+                            <button className="btn default" data-categoria="todos" onClick={() => filtrarPorCategoria('todos')}>
+                                Todos
+                            </button>
                         </div>
                     </div>
                     <div className="produtos">
                         {jogosFiltrados.map((jogo, index) => (
                             <div key={index} className="cards">
-                                <img src={process.env.PUBLIC_URL + '/img/battefiled.png'} className="card-imgs" alt="..." />
+                                <img src={jogo.img} className="card-imgs" alt=""/>
                                 <div className="card-body">
                                     <h5 className="card-title">{jogo.nome}</h5>
                                 </div>
-                                <Avaliacao isRated={jogo.estrelas} texto="sem classificações" />
+                                <Avaliacao
+                                    numEstrelas={jogo.estrelas}
+                                    maxEstrelas={5} // Número total de estrelas
+                                    filledSrc={StarFilled}
+                                    outlineSrc={StarOutline}
+                                    preenchidoSrc={StarPreenchida}
+                                />
                                 <div className="informacoes">
-                                    <span className="desconto">{"jogo.desconto"}</span>
-                                    <span className="valor">{"jogo.valor"}</span>
+                                    <span className="desconto">R$ {jogo.desconto}</span>
+                                    <span className="valor">R$ {jogo.valor}</span>
+                                    <span className="dividir">em 1x no cartão de crédito</span>
                                 </div>
                             </div>
+
                         ))}
                     </div>
                 </div>
             </main>
-            <br />
+            <br/>
             <footer id="footer">
                 <div className="footer-top">
                     <div className="footer-column">
