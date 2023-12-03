@@ -12,7 +12,7 @@ function Header() {
             <header>
 
                 <div className="logo">
-                    <a href="../App.tsx">
+                    <a href="/">
                         <img src={LogoImg} alt="logo"/>
                     </a>
                 </div>

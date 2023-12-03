@@ -13,7 +13,7 @@ import StarPreenchida from "./img/star.png";
 import StarFilled from "./img/star-filled.png";
 import StarOutline from "./img/star-outline.png";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Login from "./pages/Login";
+import CadastroJogo from "./pages/cadastroJogo";
 
 
 
@@ -57,7 +57,7 @@ const App: React.FC = () => {
             <Carrossel/>
             <br/>
             <div className="add-jogo">
-                <a href="pages/cadatro_jogo.html">
+                <a href="/cadastro_jogo">
                     <button className="btn orange text-center">Clique aqui e adicione seu Jogo</button>
                 </a>
                 <br/>

@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Login from './pages/Login';
 import {BrowserRouter, Routes,Route} from "react-router-dom";  // Substitua pelo caminho real do seu componente de login
+import reportWebVitals from './reportWebVitals';
+import './index.css';
+import './css/style.css';
+import './css/style2.css';
+import App from './App';
+import Login from './pages/Login';
+import CadastroJogo from './pages/cadastroJogo';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-
       <BrowserRouter>
           <Routes>
               <React.Fragment>
                   <Route path="/" element={<App />} />
                   <Route path="/login" element={<Login />} />
-                  <Route path="/cadastro_user" element={<Login />} />
+                  {/*<Route path="/cadastro_user" element={<Login />} />*/}
+                  <Route path="/cadastro_jogo" element={<CadastroJogo />} />
               </React.Fragment>
           </Routes>
       </BrowserRouter>
