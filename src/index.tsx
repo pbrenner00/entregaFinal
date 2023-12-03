@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from './pages/Login';
+import {BrowserRouter, Routes,Route} from "react-router-dom";  // Substitua pelo caminho real do seu componente de login
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+
+      <BrowserRouter>
+          <Routes>
+              <React.Fragment>
+                  <Route path="/" element={<App />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/cadastro_user" element={<Login />} />
+              </React.Fragment>
+          </Routes>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

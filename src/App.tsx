@@ -12,6 +12,9 @@ import Carrossel from "./pages/Carrossel";
 import StarPreenchida from "./img/star.png";
 import StarFilled from "./img/star-filled.png";
 import StarOutline from "./img/star-outline.png";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Login from "./pages/Login";
+
 
 
 interface Jogo {
@@ -45,6 +48,11 @@ const App: React.FC = () => {
 
     return (
         <div>
+            {/*<BrowserRouter>*/}
+            {/*    <Routes>*/}
+            {/*        <Route path="/" element={}/>*/}
+            {/*    </Routes>*/}
+            {/*</BrowserRouter>*/}
             <Header/>
             <Carrossel/>
             <br/>
