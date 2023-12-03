@@ -36,21 +36,21 @@ const Carrossel = () => {
         <Slider {...settings}>
             <div>
                 <img src={ImgCarousel1} className="" alt="..."/>
-                <div className="">
+                <div className="carosselLegenda">
                     <h5>Battlefield 4™</h5>
                     <p>Para quem gosta de jogos tiro.</p>
                 </div>
-            </div>
+            </div >
             <div>
                 <img src={ImgCarousel2} className="" alt="..."/>
-                <div className="">
+                <div  className="carosselLegenda">
                     <h5>GTA V</h5>
                     <p>Esse jogo vai fazer você ficar vidrado, com as varias missões para fazer.</p>
                 </div>
             </div>
             <div>
                 <img src={ImgCarousel3} className="" alt="..."/>
-                <div className="">
+                <div className="carosselLegenda">
                     <h5>EA Sports FC 24</h5>
                     <p>O grafico e a jogabilidade junto a realidade vai fazer você amar esse jogo.</p>
                 </div>

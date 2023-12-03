@@ -19,7 +19,7 @@ header {
     color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 0 0 10px;
     align-items: center;
 }
 
@@ -540,9 +540,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: #22272e solid 2px;
-    border-top: #22272e solid 2px;
+    padding: 20px 0;
 }
 
 .button-slide {
