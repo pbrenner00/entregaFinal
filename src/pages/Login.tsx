@@ -15,7 +15,7 @@ function Login() {
                 </div>
                 <div className="icon-numero">
                     <div className="img-numero">
-                        <img src="../img/ico-tel.png" alt=""/>
+                        <img src={LogoTel} alt=""/>
                     </div>
                     <div className="texto-numero">
                         <span> 4002 - 8922</span>
@@ -48,7 +48,7 @@ function Login() {
                                     </div>
                                     <div className="link-cadastro">
                                         <div className="link-cadastro2">
-                                            Não possui cadastro?<a href="cadastro.html"> Clique Aqui</a>
+                                            Não possui cadastro?<a href="/cadastro_user"> Clique Aqui</a>
                                         </div>
                                     </div>
                                 </div>
